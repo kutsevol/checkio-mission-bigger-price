@@ -1,46 +1,50 @@
 <p>
-    <i>( Describe task in general )</i>
+    <strong>Input: </strong> int and list of dicts. Each dict has two keys "name" and "price"
 </p>
 
 <p>
-    Sum two passed ints
-</p>
-
-<p style="text-align: center;">
-    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
-</p>
-
-<p><i>( Explain input and output values )</i></p>
-<p>
-    <strong>Input: </strong> Two arguments. Both are int
-</p>
-
-<p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> the same as Input.
 </p>
 
 
 
 <div class="for_info_only">
-    <p><i>( Put some usage examples )</i></p>
     <p>
         <strong>Example:</strong>
     </p>
-<pre class="brush: python">{% if interpreter.slug == "js-node" %}
-sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">biggerPrice(2, [
+    {"name": "bread", "price": 100},
+    {"name": "wine", "price": 138},
+    {"name": "meat", "price": 15},
+    {"name": "water", "price": 1}
+]) == [
+    {"name": "wine", "price": 138},
+    {"name": "bread", "price": 100}
+]
+
+biggerPrice(1, [
+    {"name": "pen", "price": 5},
+    {"name": "whiteboard", "price": 170}
+]) == [{"name": "whiteboard", "price": 170}]
+</pre>
 {% else %}
-sum_two(2, 3) == 5
-sum_two(5, 7) == 12
-{% endif %}</pre>
+<pre class="brush: python">bigger_price(2, [
+    {"name": "bread", "price": 100},
+    {"name": "wine", "price": 138},
+    {"name": "meat", "price": 15},
+    {"name": "water", "price": 1}
+]) == [
+    {"name": "wine", "price": 138},
+    {"name": "bread", "price": 100}
+]
+
+bigger_price(1, [
+    {"name": "pen", "price": 5},
+    {"name": "whiteboard", "price": 170}
+]) == [{"name": "whiteboard", "price": 170}]
+</pre>
+{% endif %}
 </div>
 
-<p class="for_info_only">
-    <strong>How it is used: </strong>
-    <i>(Here you can explain how it can be used in development and what is usage of this.)</i>
-</p>
-
-<p>
-    <strong>Precondition:</strong>
-    <i>Constraints for Input</i>
-</p>
