@@ -1,23 +1,27 @@
 <p>
-    You have a table with all available goods in the store. The data is represented as a list of {% if interpreter.slug == "js-node" %}objects{% else %}dicts{% endif %}
+    Дана таблица всех доступных продуктов на складе. Данные представленны в виде {% if interpreter.slug == "js-node" %} массива объектов (array of objects){% else %}списка диктов (a list of dicts){% endif %}
 </p>
 
 <p>
     Your mission here is to find TOP most expensive goods. The amount we are looking for will be given as a first argument and the whole data as the second one
 </p>
 
+<p>
+    Ваша миссия тут - это найти ТОП самых дорогих товаров. Количество товаров, которые мы ищем, будет переданно в первом аргументе, а сами данные по товарам будут переданны вторым аргументом.
+</p>
+
 {% if interpreter.slug == "js-node" %}
 <p>
-    <strong>Input: </strong>  Integer and array of objects. Each objects has two attributes "name" and "price"
+    <strong>Input: </strong>Число и массив объектов (Integer and array of objects). У каждого объекта 2 аттрибута "name" и "price"
 </p>
 {% else %}
 <p>
-    <strong>Input: </strong> int and list of dicts. Each dicts has two keys "name" and "price"
+    <strong>Input: </strong>Число и массив диктов (int and list of dicts). Каждый дикт имеет 2 ключа "name" и "price".
 </p>
 {% endif %}
 
 <p>
-    <strong>Output: </strong> the same as the second Input argument.
+    <strong>Output: </strong>Такой же как и второй аргумент.
 </p>
 
 
