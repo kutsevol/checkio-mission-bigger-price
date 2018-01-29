@@ -10,6 +10,14 @@ function biggerPrice(limit, data) {
 var assert = require('assert');
 
 if (!global.is_checking) {
+    console.log('Example:')
+    console.log(biggerPrice(2, [
+        {"name": "bread", "price": 100},
+        {"name": "wine", "price": 138},
+        {"name": "meat", "price": 15},
+        {"name": "water", "price": 1}
+    ]))
+
     assert.deepEqual(biggerPrice(2, [
         {"name": "bread", "price": 100},
         {"name": "wine", "price": 138},
