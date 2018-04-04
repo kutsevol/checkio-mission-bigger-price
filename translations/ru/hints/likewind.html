@@ -5,7 +5,7 @@
         Мне нужны идеи чтобы с чего-то начать.
     </div>
     <div class="answer">
-        Вам необходимо создать список словарей, отсортировать его по убыванию значения 'price' и оставить столько словарей,
+        Вам необходимо отсортировать список словарей по убыванию значения 'price' и оставить столько словарей,
         сколько указано в параметре 'limit'.
     </div>
 </div>
@@ -16,14 +16,37 @@
     </div>
     <div class="answer">
         Используйте встроенную функцию 
-        <a href='https://docs.python.org/3/library/functions.html?highlight=sorted#sorted'>sorted()</a> c параметром
-        reverse = True. В этом случае список будет отсортирован от максимального значения к минимальному.
+        <a href='https://docs.python.org/3/library/functions.html?highlight=sorted#sorted'>sorted()</a>.
     </div>
 </div>
 
 <div class="question-answer">
     <div class="question">
-        Как оставить в списке столько элементов, сколько требуется?
+        Как именно будет реализовываться сортировка словарей по значениям 'price'?
+    </div>
+    <div class="answer">
+        Функция может выглядеть так:
+        <pre class="brush: python">
+def bigger_price(limit, data):
+    return sorted(data, key=lambda x: x['price'])</pre>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        Но словари отсортировались от меньшего 'price' к большему. Что делать?
+    </div>
+    <div class="answer">
+        Достаточно добавить дополнительный параметр:
+        <pre class="brush: python">
+def bigger_price(limit, data):
+    return sorted(data, key=lambda x: x['price'], reverse=True)</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Как именно я должен учесть параметр 'limit'?
     </div>
     <div class="answer">
         Для того, чтобы ограничить итоговый отсортированный список количеством элементов, равным 'limit', достаточно
@@ -32,8 +55,8 @@
         <pre class="brush: python">
 x = sorted(x)[:limit]</pre>
     </div>
-</div>
-
+</div>    
+    
 <div class="question-answer">
     <div class="question">
         Мне нужно увидеть полную картину, чтобы разобраться.
