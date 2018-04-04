@@ -1,0 +1,49 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Мне нужны идеи чтобы с чего-то начать.
+    </div>
+    <div class="answer">
+        Вам необходимо создать список словарей, отсортировать его по убыванию значения 'price' и оставить столько словарей,
+        сколько указано в параметре 'limit'.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Что именно я должен использовать для этого?
+    </div>
+    <div class="answer">
+        Используйте встроенную функцию 
+        <a href='https://docs.python.org/3/library/functions.html?highlight=sorted#sorted'>sorted()</a> c параметром
+        reverse = True. В этом случае список будет отсортирован от максимального значения к минимальному.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Как оставить в списке столько элементов, сколько требуется?
+    </div>
+    <div class="answer">
+        Для того, чтобы ограничить итоговый отсортированный список количеством элементов, равным 'limit', достаточно
+        сделать срез и в качестве правого предела указать значение 'limit'.
+        Условно, это будет выглядеть так:
+        <pre class="brush: python">
+        x = sorted(x)[:limit]</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        Мне нужно увидеть полную картину, чтобы разобраться.
+    </div>
+    <div class="answer">
+        Готовая функция может выглядеть так:
+        <pre class="brush: python">
+        def bigger_price(limit, data):
+            return sorted(data, key=lambda x: x['price'], reverse=True)[:limit]</pre>
+    </div>
+</div>
+
+</body>
