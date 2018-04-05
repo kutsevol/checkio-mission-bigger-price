@@ -1,0 +1,72 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        Мне нужны идеи чтобы с чего-то начать.
+    </div>
+    <div class="answer">
+        You need to sort the list of dictionaries in descending order of 'price' and leave as many dictionaries 
+        as defined via 'limit' parameter.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        What exactly should I use for this?
+    </div>
+    <div class="answer">
+        Use the built-in 
+        <a href='https://docs.python.org/3/library/functions.html?highlight=sorted#sorted'>sorted()</a> function.
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        How exactly the sorting of dictionaries will be implemented according to the 'price' values?
+    </div>
+    <div class="answer">
+        The function might look like this:
+        <pre class="brush: python">
+def bigger_price(limit, data):
+    return sorted(data, key=lambda x: x['price'])</pre>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        But the dictionaries were sorted from the lowest to the highest 'price'. What should I do?
+    </div>
+    <div class="answer">
+        You can add an extra parameter:
+        <pre class="brush: python">
+def bigger_price(limit, data):
+    return sorted(data, key=lambda x: x['price'], reverse=True)</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        How exactly should I take into account the 'limit' parameter?
+    </div>
+    <div class="answer">
+        In order to reduce the final sorted list to the number of elements equal to the 'limit', you should 
+        make a slice and specify the value of 'limit' as the right limit.
+        It'll look something like this:
+        <pre class="brush: python">
+x = sorted(x)[:limit]</pre>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        To figure it out I need to see the whole picture.
+    </div>
+    <div class="answer">
+        The function might look as follows:
+        <pre class="brush: python">
+def bigger_price(limit, data):
+    return sorted(data, key=lambda x: x['price'], reverse=True)[:limit]</pre>
+    </div>
+</div>
+
+</body>
