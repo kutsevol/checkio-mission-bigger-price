@@ -1,4 +1,4 @@
-def bigger_price(limit, data):
+def bigger_price(limit: int, data: list) -> list:
     """
         TOP most expensive goods
     """
