@@ -1,0 +1,70 @@
+<body data-author="likewind">
+
+<div class="question-answer">
+    <div class="question">
+        最初に実装のアイデアが必要です。
+    </div>
+    <div class="answer">
+        まず辞書のリストを'price'の降順にソートすればよいでしょう。 そして、その結果を'limit'の数だけ残しましょう。
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        では、何を使えばいいのでしょう？
+    </div>
+    <div class="answer">
+        組み込みの 
+        <a href='https://docs.python.org/3/library/functions.html?highlight=sorted#sorted'>sorted()</a>関数が便利です。
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        どうやって辞書を'price'の値の順にソートすればいいのですか？
+    </div>
+    <div class="answer">
+        このような関数です:（訳者注：sorted()にはkey関数を与えることができ、この順に並べ替えられます）
+        <pre class="brush: python">
+def bigger_price(limit, data):
+    return sorted(data, key=lambda x: x['price'])</pre>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        'price'の小さい順にソートされてしまいました。どうすればいいですか？
+    </div>
+    <div class="answer">
+        新しくパラメータを一つ付け加えます:
+        <pre class="brush: python">
+def bigger_price(limit, data):
+    return sorted(data, key=lambda x: x['price'], reverse=True)</pre>
+    </div>
+</div>
+
+<div class="question-answer">
+    <div class="question">
+        どうやって'limit'のパラメータを考慮すればいいのでしょう。
+    </div>
+    <div class="answer">
+        ソート結果を'limit'の数だけに制限するには、スライスを使ってちょうど'limit'の数だけになるように結果を切り出します。
+        このようになるでしょう:
+        <pre class="brush: python">
+x = sorted(x)[:limit]</pre>
+    </div>
+</div>    
+    
+<div class="question-answer">
+    <div class="question">
+        最後に全体像を教えてください。（訳者注：答えそのものが含まれます！）
+    </div>
+    <div class="answer">
+        The function might look as follows:
+        <pre class="brush: python">
+def bigger_price(limit, data):
+    return sorted(data, key=lambda x: x['price'], reverse=True)[:limit]</pre>
+    </div>
+</div>
+
+</body>
