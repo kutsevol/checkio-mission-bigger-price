@@ -1,0 +1,63 @@
+<p>
+    店に売られているすべての品物のテーブルがあります。このデータは{% if interpreter.slug == "js-node" %}オブジェクト{% else %}辞書{% endif %}のリストで表されます。
+</p>
+
+<p>
+    このミッションでは、最も高額な品物を見つけてください。見つける数は最初の引数で与えられ、データ全体が二番目の引数で与えられます。
+</p>
+
+{% if interpreter.slug == "js-node" %}
+<p>
+    <strong>入力: </strong>  整数とobjectのarray。各objectは "name" と "price" の属性をもっている。
+</p>
+{% else %}
+<p>
+    <strong>入力: </strong> 整数と辞書のリスト。 各辞書は "name" と "price" のキーをもっている。
+</p>
+{% endif %}
+
+<p>
+    <strong>出力: </strong> 入力の二番目と同じ。
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>例:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">biggerPrice(2, [
+    {"name": "bread", "price": 100},
+    {"name": "wine", "price": 138},
+    {"name": "meat", "price": 15},
+    {"name": "water", "price": 1}
+]) == [
+    {"name": "wine", "price": 138},
+    {"name": "bread", "price": 100}
+]
+
+biggerPrice(1, [
+    {"name": "pen", "price": 5},
+    {"name": "whiteboard", "price": 170}
+]) == [{"name": "whiteboard", "price": 170}]
+</pre>
+{% else %}
+<pre class="brush: python">bigger_price(2, [
+    {"name": "bread", "price": 100},
+    {"name": "wine", "price": 138},
+    {"name": "meat", "price": 15},
+    {"name": "water", "price": 1}
+]) == [
+    {"name": "wine", "price": 138},
+    {"name": "bread", "price": 100}
+]
+
+bigger_price(1, [
+    {"name": "pen", "price": 5},
+    {"name": "whiteboard", "price": 170}
+]) == [{"name": "whiteboard", "price": 170}]
+</pre>
+{% endif %}
+</div>
