@@ -42,6 +42,19 @@ TESTS = {
                 {"name": "wine", "price": 138},
                 {"name": "milk", "price": 25}
             ]
+        },
+        {
+            "input": [3, [
+                {"name": "bread", "price": 10},
+                {"name": "wine", "price": 138},
+                {"name": "meat", "price": 15},
+                {"name": "milk", "price": 25}
+            ]],
+            "answer": [
+                {"name": "wine", "price": 138},
+                {"name": "milk", "price": 25},
+                {"name": "meat", "price": 15}
+            ]
         }
     ]
 }
